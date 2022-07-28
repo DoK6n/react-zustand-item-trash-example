@@ -5,7 +5,7 @@ import Item from './components/Item';
 import Trash from './components/Trash';
 
 export default function App() {
-  const { items, addItem } = useItemStore();
+  const { items, addNewItem } = useItemStore();
   const { removedItems, deleteAll } = useRemovedStore();
 
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <h2>아이템 목록</h2>
       <button
         onClick={() => {
-          addItem();
+          addNewItem();
         }}
       >
         아이템 추가

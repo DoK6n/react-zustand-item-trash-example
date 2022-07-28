@@ -10,7 +10,7 @@ export interface IItem {
 
 interface IItemStore {
   items: IItem[];
-  addItem: () => void;
+  addNewItem: () => void;
   recycleItem: (item: IItem) => void;
   findItemById: (id: string) => IItem;
   removeItem: (id: string) => void;
@@ -21,7 +21,7 @@ export const useItemStore = create<IItemStore>()(
     persist(
       immer((set, get) => ({
         items: [],
-        addItem: () => {
+        addNewItem: () => {
           set((state) => {
             const id = nanoid();
             state.items.push({
